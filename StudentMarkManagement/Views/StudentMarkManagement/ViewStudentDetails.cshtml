@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<StudentMarkManagement.Core.Model.StudentDetails>
+<div class="container">
+    
+    <table class="table table-hover">
+
+        <tr>
+
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department Name</th>
+            <th>Gender</th>
+            <th>Action</th>
+
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+                <td> @item.StudentId </td>
+                <td> @item.StudentName </td>
+                <td>@item.StudentEmail</td>
+                <td> @item.StudentDepartment </td>
+                <td> @item.Gender</td>
+                <td>
+
+                    <i class="glyphicon glyphicon-trash">@Html.ActionLink("Delete", "DeleteStudentDetails", new { id = item.StudentId }, new { onclick = "return confirm('Are sure wants to delete?');" })
+
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>
+    

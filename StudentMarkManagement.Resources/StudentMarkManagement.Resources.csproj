@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentMarkManagement.Core\StudentMarkManagement.Core.csproj" />
+    <ProjectReference Include="..\StudentMarkManagement.Entity\StudentMarkManagement.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

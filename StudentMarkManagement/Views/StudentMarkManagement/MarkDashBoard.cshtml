@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model StudentMarkManagement.Core.Model.StudentMarkDetails
+
+<h1>Student Mark Details</h1>
+@using (Html.BeginForm("SaveStudentDetails", "StudentMarkManagement", FormMethod.Post, new { @id = "Formdetails" }))
+{
+
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+    @Html.HiddenFor(x => x.StuduentId)
+<div class="container">
+
+    <div class="form-group">
+        @*@Html.LabelFor(x => x.StudentName, new { @class = "form-label" })*@
+        <label class="col-form-label"> Enter Your Name</label><span>*</span>
+        @Html.TextBoxFor(x => x.StuduentName, new { @class = "form-control", @placeholder = "Enter Your Name" })
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label"> Mark 1</label><span>*</span>
+
+        @Html.TextBoxFor(x => x.Mark1, new { @class = "form-control", @placeholder = "Enter Your Email" })
+    </div>
+
+
+    <div class="form-group">
+        <label class="col-form-label"> Mark 2</label><span>*</span>
+
+        @Html.TextBoxFor(x => x.Mark2, new { @class = "form-control", @placeholder = "Enter Your Email" })
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" onclick="SubmitDetails()">Submit</button>
+    </div>
+    @*@ViewBag.Message
+        <environment include="Development">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        </environment>*@
+</div>
+}
